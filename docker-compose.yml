@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  nginx:
+      image: nginx:1.23.1
+      container_name: nginx
+      restart: unless-stopped
+      ports:
+        - "8082:80"
+      volumes:
+        - ${HTML_DIR}:/usr/share/nginx/html
+
+
+  cloudflared:
+      image: cloudflare/cloudflared:2022.9.0-amd64
+      container_name: cloudflared
+      restart: unless-stopped
+      command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+      volumes:
+        - ./cloudflared-data:/data
+  
