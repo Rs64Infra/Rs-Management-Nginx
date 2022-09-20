@@ -13,7 +13,7 @@ services:
 
   cloudflared:
       image: cloudflare/cloudflared:2022.9.0-amd64
-      container_name: cloudflared
+      container_name: cloudflared-use-nginx
       restart: unless-stopped
       command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
       volumes:
