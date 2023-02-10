@@ -1,2 +1,4 @@
 /cloudflared-data/
 .env
+/keydata
+default.conf
