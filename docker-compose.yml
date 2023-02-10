@@ -22,3 +22,7 @@ services:
         - ./cloudflared-data:/data
       
   
+networks:
+  default:
+    name: ${EXTERNAL_NAME}
+    external: true
