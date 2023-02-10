@@ -10,6 +10,7 @@ services:
       volumes:
         - ${HTML_DIR}:/usr/share/nginx/html
         - ./default.conf:/etc/nginx/conf.d/default.conf
+        - ./keydata:/etc/nginx/keydata
 
 
   cloudflared:
